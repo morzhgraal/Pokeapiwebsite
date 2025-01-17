@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <content>
+        <div class="card mb-3" style="width: 100%;">
+            <div class="row g-0">
+<!--                <div class="col-md-4">-->
+<!--                    <img src="../static/img/pikachu.png" class="img-fluid rounded-start" alt="...">-->
+<!--                </div>-->
+                <div class="col-md-8" style="max-width: 540px;">
+                    <div class="card-body">
+                        <br>
+                        <br>
+                        {% if pokemon %}
+                            <div class="center"><h5 class="card-title">Name of the pokemon: {{ name|upper }}</h5></div>
+                            <table class="table table-bordered">
+                                <tbody>
+                                {% for key, value in pokemon.items() %}
+                                    <tr>
+                                        <td>{{ key|capitalize|replace('_', ' ') }}</td>
+                                        <td>{{ value }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        {% else %}
+                            <h5 class="card-title">Ошибка! Такого покемона не существует</h5>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </content>
+{% endblock %}<!--основная часть-->

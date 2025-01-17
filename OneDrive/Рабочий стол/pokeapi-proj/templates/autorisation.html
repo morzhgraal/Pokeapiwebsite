@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Autorisation</title>
+    <link type="text/css" href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet"/>
+</head>
+
+<body>
+<form class="form" action="{{ url_for('login') }}" method="post">
+    <h1 class="auth">Welcome back!</h1>
+    <div>
+        {% for cat, msg in get_flashed_messages(True) %}
+            <div class="flash {{ cat }}">{{ msg }}</div>
+        {% endfor %}
+        {{ form.hidden_tag() }}
+        {{ form.email() }}
+        <p></p>
+        {{ form.password() }}
+        <p></p>
+        <div class="form-group form-check">
+            {{ form.remember_me() }}
+            {{ form.remember_me.label() }}
+        </div>
+        <p></p>
+        {{ form.submit(class_="btn") }}
+        <p class="btn"><a href="{{url_for('register')}}">REGISTER</a>
+    </div>
+
+</form>
+</body>
+
+</html>

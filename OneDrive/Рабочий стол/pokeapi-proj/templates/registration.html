@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Registration</title>
+    <link type="text/css" href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet"/>
+</head>
+
+<body>
+<form class="form" action="{{ url_for('register') }}" method="post">
+    <h1 class="auth">Welcome to PokeWiki!</h1>
+    {% for cat, msg in get_flashed_messages(True) %}
+        <div class="flash {{ cat }}">{{ msg }}</div>
+    {% endfor %}
+    <div>
+        {{ form.hidden_tag() }}
+        {% for field in form if field.name in ['email', 'password', 'password_again'] -%}
+            {% if field.errors %}
+                {{ field(class="invalid") }}
+                <span class="invalid-feedback">
+                   {% for e in field.errors %}
+                       {{ e }}
+                   {% endfor %}
+                </span>
+            {% else %}
+                {{ field() }}
+            {% endif %}
+            <p></p>
+        {% endfor %}
+
+        <br>
+        <div>
+            {{ form.submit(class_="btn") }}
+        </div>
+    </div>
+</form>
+</body>
