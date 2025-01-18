@@ -3,7 +3,7 @@ Click folders "OneDrive" -> "Рабочий стол" -> "pokeapi-proj" in order
 
 Description of the program:
 
-PokeWiki is generally aimed at providing convenient ways to discover certain data for a cerrtain Pokémon of any type. 
+PokeWiki is generally aimed at providing convenient ways to discover certain data for a certain Pokémon of any type. 
 
 Firtstly, you have to resgister or log in the system and then use our website. 
 
