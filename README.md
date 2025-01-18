@@ -1,5 +1,5 @@
 ﻿# Pokeapiwebsite
-Click folders "Onedrive" -> "Рабочий стол" -> "pokeapi-proj" in order to open the website code. 
+Click folders "OneDrive" -> "Рабочий стол" -> "pokeapi-proj" in order to open the website code. 
 
 Description of the program:
 
